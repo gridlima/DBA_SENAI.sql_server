@@ -1,2 +1,2 @@
 # DBA_SENAI
-Exercícios resolvidos - Administração de Banco de Dados
+Exercícios resolvidos_sql
