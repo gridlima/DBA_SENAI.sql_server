@@ -1,5 +1,5 @@
 # DBA_SENAI
-Exercícios resolvidos_sql_server
+Exercícios resolvidos sql_server
 
 Descrição dos assuntos aprendidos:
 
