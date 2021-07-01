@@ -1,0 +1,147 @@
+--------------------------------------- Aula 5 – Chave Primária e manipulando outros tipos de dados -----------------------------------------
+
+
+INSERT INTO [TABELA DE PRODUTOS]([CODIGO DO PRODUTO], [NOME DO PRODUTO], [EMBALAGEM], [TAMANHO], [SABOR], [PRECO DE LISTA])
+VALUES('788975', 'Pedaços de Frutas - 1,5 Litros - Maça', 'PET', '1,5 Litros', 'Maça', 18.01)
+
+INSERT INTO [TABELA DE PRODUTOS]([CODIGO DO PRODUTO], [NOME DO PRODUTO], [EMBALAGEM], [TAMANHO], [SABOR], [PRECO DE LISTA])
+VALUES('788975', 'Pedaços de Frutas - 1,5 Litros - Maça', 'PET', '1,5 Litros', 'Maça', 18.01)
+
+
+
+DROP TABLE [TABELA DE PRODUTOS]
+
+
+CREATE TABLE [TABELA DE PRODUTOS](
+    [CODIGO DO PRODUTO] [VARCHAR](10),
+    [NOME DO PRODUTO][VARCHAR](50),
+    [EMBALAGEM][VARCHAR](20),
+    [TAMANHO][VARCHAR](10),
+    [SABOR][VARCHAR](20),
+    [PREÇO DE LISTA][SMALLMONEY],
+    PRIMARY KEY  ([CODIGO DO PRODUTO])
+    
+)
+
+
+--INSERINDO REGISTROS NA TABELA DE PRODUTOS
+
+USE [ESQUINA_VENDAS]
+
+INSERT INTO [TABELA DE PRODUTOS]
+([CODIGO DO PRODUTO],[NOME DO PRODUTO],[EMBALAGEM],[TAMANHO],[SABOR], [PRECO DE LISTA])
+  VALUES 
+  ('1040107','Light - 350 ml - Melancia','Lata','350 ml','Melancia',4.56),
+  ('1037797','Clean - 2 Litros - Laranja','PET','2 Litros','Laranja',16.01),
+  ('1000889','Sabor da Montanha - 700 ml - Uva','Garrafa','700 ml','Uva',6.31),
+  ('1004327','Videira do Campo - 1,5 Litros - Melancia','PET','1,5 Litros','Melancia',19.51),
+  ('1088126','Linha Citros - 1 Litro - Limão','PET','1 Litro','Limão',7.00),
+  ('544931','Frescor do Verão - 350 ml - Limão','Lata','350 ml','Limão',2.46),
+  ('1078680','Frescor do Verão - 470 ml - Manga','Garrafa','470 ml','Manga',5.18)
+
+
+
+
+INSERT INTO [TABELA DE PRODUTOS]([CODIGO DO PRODUTO], [NOME DO PRODUTO], [EMBALAGEM], [TAMANHO], [SABOR], [PREÇO DE LISTA])
+VALUES('788975', 'Pedaços de Frutas - 1,5 Litros - Maça', 'PET', '1,5 Litros', 'Maça', 18.01)
+
+-------------------------------- DESAFIO 1 DA AULA 5 ----------------------------------------------------------
+
+DROP TABLE [TABELA DE CLIENTES]
+
+CREATE TABLE [TABELA DE CLIENTES]
+( [CPF] [VARCHAR] (11) ,
+[NOME] [VARCHAR] (100) ,
+[ENDERECO] [VARCHAR] (150) ,
+[COMPLEMENTO] [VARCHAR] (150) ,
+[BAIRRO] [VARCHAR] (50) ,
+[CIDADE] [VARCHAR] (50) ,
+[ESTADO] [VARCHAR] (2) ,
+[CEP] [VARCHAR] (8) ,
+[DATA DE NASCIMENTO] [DATE],
+[IDADE] [SMALLINT],
+[SEXO] [VARCHAR] (1) ,
+[LIMITE DE CREDITO] [MONEY] ,
+[VOLUME DE COMPRA] [FLOAT] ,
+[PRIMEIRA COMPRA] [BIT],
+PRIMARY KEY ([CPF])
+)
+
+
+
+---------------- DESAFIO 2 (MASTER) DA AULA 5 -------------------------------------
+
+DROP TABLE [TABELA DE VENDEDORES]
+
+
+
+CREATE TABLE [TABELA DE VENDEDORES]
+( [MATRICULA] [VARCHAR](5),
+[NOME] [VARCHAR](100),
+[PERCENTUAL COMISSAO] [FLOAT],
+[DATA DE ADMISSAO][DATE],
+[FERIAS][BIT]
+PRIMARY KEY ([MATRICULA])
+)
+
+
+INSERT INTO [TABELA DE VENDEDORES]
+([MATRICULA], [NOME], [PERCENTUAL COMISSAO],[DATA DE ADMISSAO],[FERIAS])
+VALUES
+('00133','Marly dos Santos Gama',0.08,'15/08/2014',0)
+
+INSERT INTO [TABELA DE VENDEDORES]
+([MATRICULA], [NOME], [PERCENTUAL COMISSAO],[DATA DE ADMISSAO],[FERIAS])
+VALUES
+('00144','Bruno César Brandão',0.05,'15/08/2016',1)
+
+INSERT INTO [TABELA DE VENDEDORES]
+([MATRICULA], [NOME], [PERCENTUAL COMISSAO],[DATA DE ADMISSAO],[FERIAS])
+VALUES
+('00155','Roberta Serra',0.11,'15/08/2018',0)
+
+INSERT INTO [TABELA DE VENDEDORES]
+([MATRICULA], [NOME], [PERCENTUAL COMISSAO],[DATA DE ADMISSAO],[FERIAS])
+VALUES
+('00166','Pericles Alves',0.11,'15/08/2019',1)
+
+
+
+INSERT INTO [TABELA DE CLIENTES] 
+(	[CPF],
+	[NOME],
+	[ENDERECO],
+	[COMPLEMENTO],
+	[BAIRRO],
+	[CIDADE],
+	[ESTADO],
+	[CEP],
+	[DATA DE NASCIMENTO],
+	[IDADE],
+	[SEXO],
+	[LIMITE DE CREDITO],
+	[VOLUME DE COMPRA],
+	[PRIMEIRA COMPRA]) 
+VALUES 
+(	
+	'51073366200',
+	'Márcio Ladislau Freitas',
+	'R. Dois de Fevereiro',
+	'',
+	'Água Santa',
+	'Rio de Janeiro',
+	'RJ',
+	'22000000',
+	--'2000-02-12',
+	'12/31/2000',
+	18,
+	'M',
+	100000,
+	200000,
+	1
+)
+
+
+
+  DELETE FROM [TABELA DE CLIENTES]
+  WHERE [CPF] = '51073366200'

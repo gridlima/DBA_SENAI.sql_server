@@ -1,0 +1,89 @@
+----------------------------- AULA 7 - FILTRANDO AS CONSULTAS DE DADOS ---------------------------------
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] = 'Manga' OR [TAMANHO] = '700 ml' 
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] = 'Manga' AND [TAMANHO] = '700 ml' 
+
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE NOT ([SABOR] = 'Manga' AND [TAMANHO] = '700 ml')
+
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE NOT ([SABOR] = 'Manga' OR [TAMANHO] = '700 ml')
+
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] = 'Manga' AND NOT ( [TAMANHO] = '700 ml')
+
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] IN ('Manga', 'Laranja')
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] = 'Manga' OR [SABOR] ='Laranja'
+
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] NOT IN ('Manga', 'Laranja')
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS]
+WHERE NOT ([SABOR] = 'Manga' OR [SABOR] ='Laranja')
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] IN ('Manga', 'Laranja') AND [PRECO DE LISTA] > 10
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] IN ('Manga', 'Laranja') AND [PRECO DE LISTA] BETWEEN 10 AND 13
+
+
+
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [SABOR] IN ('Manga', 'Laranja') AND [PRECO DE LISTA] >= 10 AND [PRECO DE LISTA] <= 13
+
+
+
+------------------------------ DESAFIO DE VOCES DA AULA 7---------------------------------
+
+SELECT *  FROM [TABELA DE ITENS NOTAS FISCAIS]
+WHERE [QUANTIDADE] > 60 AND [PREÇO] <= 3
+
+------------------------- USANDO O LIKE --------------------------------------------------
+
+SELECT * FROM [TABELA DE PRODUTOS]
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [NOME DO PRODUTO] LIKE '%Litros%'
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [NOME DO PRODUTO] LIKE 'Litros%'
+
+SELECT * FROM [TABELA DE PRODUTOS] 
+WHERE [NOME DO PRODUTO] LIKE '%Litros%' AND [SABOR] = 'Laranja'
+
+
+
